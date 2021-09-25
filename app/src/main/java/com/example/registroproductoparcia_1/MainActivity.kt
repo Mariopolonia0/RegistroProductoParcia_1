@@ -10,6 +10,9 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
 import com.example.registroproductoparcia_1.databinding.ActivityMainBinding
+import data.ProductoDb
+import kotlinx.coroutines.runBlocking
+import model.Producto
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,7 +32,13 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
 
         binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+            val room =ProductoDb.getInstance(getApplicationContext())
+
+            val producto = Producto(2,"Pinza",5,500f,20f)
+            runBlocking {
+                room.productoDao.insert(producto)
+            }
+            Snackbar.make(view, "Hola Mario", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
     }
