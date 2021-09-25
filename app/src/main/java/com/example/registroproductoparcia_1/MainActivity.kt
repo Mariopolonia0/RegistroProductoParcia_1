@@ -34,10 +34,10 @@ class MainActivity : AppCompatActivity() {
         binding.fab.setOnClickListener { view ->
             val room =ProductoDb.getInstance(getApplicationContext())
 
-            val producto = Producto(3,"Pinza",5,500f,20f)
+          /*  val producto = Producto(3,"Pinza",5,500f,20f)
             runBlocking {
                 room.productoDao.insert(producto)
-            }
+            }*/
             Snackbar.make(view, "Hola Mario", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
