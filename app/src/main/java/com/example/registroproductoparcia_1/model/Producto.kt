@@ -1,4 +1,4 @@
-package model
+package com.example.registroproductoparcia_1.model
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 

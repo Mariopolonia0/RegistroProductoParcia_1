@@ -1,10 +1,10 @@
-package data
+package com.example.registroproductoparcia_1.data
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
-import model.Producto
+import com.example.registroproductoparcia_1.model.Producto
 
 @Dao
 interface ProductoDao {

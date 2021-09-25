@@ -1,10 +1,10 @@
-package data
+package com.example.registroproductoparcia_1.data
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import model.Producto
+import com.example.registroproductoparcia_1.model.Producto
 
 @Database(
     entities = [Producto::class],

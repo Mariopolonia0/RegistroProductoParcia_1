@@ -10,9 +10,9 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
 import com.example.registroproductoparcia_1.databinding.ActivityMainBinding
-import data.ProductoDb
+import com.example.registroproductoparcia_1.data.ProductoDb
 import kotlinx.coroutines.runBlocking
-import model.Producto
+import com.example.registroproductoparcia_1.model.Producto
 
 class MainActivity : AppCompatActivity() {
 
@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         binding.fab.setOnClickListener { view ->
             val room =ProductoDb.getInstance(getApplicationContext())
 
-            val producto = Producto(2,"Pinza",5,500f,20f)
+            val producto = Producto(3,"Pinza",5,500f,20f)
             runBlocking {
                 room.productoDao.insert(producto)
             }
