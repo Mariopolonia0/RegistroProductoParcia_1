@@ -9,6 +9,8 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import androidx.navigation.fragment.findNavController
 import com.example.registroproductoparcia_1.databinding.ActivityMainBinding
 import com.example.registroproductoparcia_1.data.ProductoDb
 import kotlinx.coroutines.runBlocking
@@ -31,16 +33,7 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-        binding.fab.setOnClickListener { view ->
-            val room =ProductoDb.getInstance(getApplicationContext())
 
-          /*  val producto = Producto(3,"Pinza",5,500f,20f)
-            runBlocking {
-                room.productoDao.insert(producto)
-            }*/
-            Snackbar.make(view, "Hola Mario", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -54,7 +47,7 @@ class MainActivity : AppCompatActivity() {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
-            R.id.action_settings -> true
+            R.id.productoEditFragment -> true
             else -> super.onOptionsItemSelected(item)
         }
     }

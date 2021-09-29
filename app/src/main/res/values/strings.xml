@@ -10,5 +10,18 @@
     <string name="hello_first_fragment">Hola Mario</string>
     <string name="hello_second_fragment">Hola </string>
     <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="TituloFragmentRegistroProducto">Registro Producto</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ProductoID">ProductoID</string>
+    <string name="ProductoDescripcion">Descripcion </string>
+    <string name="ProductoExistencia">Existencia </string>
+    <string name="ProductoCosto">Costo</string>
+    <string name="ProductoInventario">Valor Inventario</string>
+    <string name="Guardar">Guardar</string>
+    <string name="Eliminar">Eliminar</string>
+    <string name="Nuevo">Nuevo</string>
+    <string name="MenuInformacion">Informacion</string>
+    <string name="MenuAgregarProducto">Agregar Producto</string>
+
 </resources>
