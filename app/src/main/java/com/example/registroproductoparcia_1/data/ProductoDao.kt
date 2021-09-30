@@ -5,6 +5,7 @@ import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
 import com.example.registroproductoparcia_1.model.Producto
+import org.intellij.lang.annotations.JdkConstants
 
 @Dao
 interface ProductoDao {
@@ -16,4 +17,5 @@ interface ProductoDao {
 
     @Query("SELECT * FROM producto WHERE ProductoId= :key")
     suspend fun find(key :Long): Producto
+
 }

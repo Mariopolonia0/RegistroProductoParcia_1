@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">RegistroProductoParcia_1</string>
+    <string name="app_name">Sistema Producto</string>
     <string name="action_settings">Configuracion</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">1ro Fragment</string>
+    <string name="first_fragment_label">Administrar Producto</string>
     <string name="second_fragment_label">2do Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>

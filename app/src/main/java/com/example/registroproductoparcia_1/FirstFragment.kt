@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.RecyclerView
 import com.example.registroproductoparcia_1.databinding.FragmentFirstBinding
 
 /**
@@ -15,8 +16,6 @@ class FirstFragment : Fragment() {
 
     private var _binding: FragmentFirstBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -35,6 +34,8 @@ class FirstFragment : Fragment() {
         binding.agregarProductofloatingActionButton.setOnClickListener(){
             findNavController().navigate(R.id.action_FirstFragment_to_productoEditFragment)
         }
+
+
     }
 
     override fun onDestroyView() {

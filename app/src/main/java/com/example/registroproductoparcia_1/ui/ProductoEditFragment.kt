@@ -12,6 +12,9 @@ import com.example.registroproductoparcia_1.databinding.ProductoEditFragmentBind
 import com.example.registroproductoparcia_1.model.Producto
 import com.google.android.material.snackbar.Snackbar
 
+private val View.text: Unit
+    get() {}
+
 class ProductoEditFragment : Fragment() {
 
     companion object {
@@ -35,16 +38,13 @@ class ProductoEditFragment : Fragment() {
         viewModel = ViewModelProvider(this,ProductoEditViewModel.Factory(requireActivity().application))
             .get(ProductoEditViewModel::class.java)
 
-        binding.guardarbutton.setOnClickListener{ view ->
+        binding.guardarbutton.setOnClickListener{
 
-            Snackbar.make(view, "Hola Mario", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
             if(!Validar()){
-                Snackbar.make(view, "Verifique los errores para continual", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
+                it.showMessage("verifique los errores para continuar")
             }else{
                 viewModel.Insert(LlenaClase())
-                //it.showMenssage
+                it.showMessage("Producto Guardado ")
                 findNavController().navigateUp()
             }
         }
@@ -62,7 +62,7 @@ class ProductoEditFragment : Fragment() {
         }
 
         binding.EditTextLayoutExistencia.let {
-            if(it.text.isNullOrEmpty()){
+            if(it.text.getFloat() < 0){
                 it.error = "El Campo Descripcion Esta Vacio"
                 esValido = false
             }else
@@ -70,15 +70,15 @@ class ProductoEditFragment : Fragment() {
         }
 
         binding.EditTextLayoutCosto.let {
-            if(it.text.isNullOrEmpty()){
-                it.error = "El Campo Descripcion Esta Vacio"
+            if(it.text.getFloat() <= 0){
+                it.error = "El Campo Descripcion Esta Vacio o Es Menor Que 0"
                 esValido = false
             }else
                 it.error = null
         }
 
         binding.EditTextLayoutValorInventario.let {
-            if(it.text.isNullOrEmpty()){
+            if(it.text.getFloat() < 0){
                 it.error = "El Campo Descripcion Esta Vacio"
                 esValido = false
             }else
