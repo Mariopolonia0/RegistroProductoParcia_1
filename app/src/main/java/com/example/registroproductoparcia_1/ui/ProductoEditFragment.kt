@@ -12,9 +12,6 @@ import com.example.registroproductoparcia_1.databinding.ProductoEditFragmentBind
 import com.example.registroproductoparcia_1.model.Producto
 import com.google.android.material.snackbar.Snackbar
 
-private val View.text: Unit
-    get() {}
-
 class ProductoEditFragment : Fragment() {
 
     companion object {
@@ -30,7 +27,6 @@ class ProductoEditFragment : Fragment() {
         binding = ProductoEditFragmentBinding.inflate(inflater,container,false)
         setHasOptionsMenu(true)
         return binding.root
-
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

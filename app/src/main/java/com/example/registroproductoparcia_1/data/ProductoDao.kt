@@ -1,5 +1,6 @@
 package com.example.registroproductoparcia_1.data
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
@@ -17,5 +18,8 @@ interface ProductoDao {
 
     @Query("SELECT * FROM producto WHERE ProductoId= :key")
     suspend fun find(key :Long): Producto
+
+    @Query("SELECT * FROM producto ORDER BY ProductoId DESC")
+    fun getAllProducto(): LiveData<List<Producto>>
 
 }

@@ -7,9 +7,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.registroproductoparcia_1.R
+import com.example.registroproductoparcia_1.data.ProductoDao
 import com.example.registroproductoparcia_1.data.ProductoDb
 import com.example.registroproductoparcia_1.model.Producto
 import com.example.registroproductoparcia_1.repository.ProductoRepository
@@ -22,6 +24,9 @@ class ProductoEditViewModel(application: Application) : ViewModel() {
     fun Insert(producto:Producto)=viewModelScope.launch{
         productoRepository.insert(producto)
     }
+
+    val listaProducto = productoRepository.allProducto()
+
 
     class Factory (val app:Application):ViewModelProvider.Factory{
         override fun <T : ViewModel?> create(modelClass: Class<T>): T {
